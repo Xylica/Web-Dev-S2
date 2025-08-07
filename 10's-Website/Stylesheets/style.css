@@ -1,0 +1,31 @@
+p {
+    color: rgb(34, 34, 66);
+}
+
+ul.center {
+    color: rgb(51, 51, 51);
+    padding: 0em 54em;
+    text-align: left;
+    font-family: Verdana;
+}
+
+table.center {
+    color: rgb(51, 51, 51);
+    padding: 0em 50em;
+    text-align: left;
+}
+
+th {
+    font-size: large;
+    color:rgb(0, 8, 78)
+}
+
+td {
+    color: rgb(51, 51, 51);
+    font-family: Verdana;
+}
+
+body {
+    background-color: rgb(247, 56, 94);
+    text-align: center;
+}
