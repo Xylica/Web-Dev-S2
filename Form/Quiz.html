@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My Quiz</title>
+    <link rel="stylesheet" href="Style.css">
+</head>
+<body>
+    <h1>My Awesome Quiz</h1>
+    <form id="quiz-form">
+        <ul class="questions">
+        <li>
+            <label for="Favourite Colour">What's your favourite colour?</label>
+            <ul>
+                <li>
+                    <input type="radio" name="colour" value="red" id="red">
+                    <label for="red">Red</label>
+                </li>
+                <li>
+                    <input type="radio" name="colour" value="blue" id="blue">
+                    <label for="blue">Blue</label>
+                 </li>
+                 <li>
+                    <input type="radio" name="colour" value="purple" id="purple">
+                    <label for="purple">Purple</label>
+                </li>
+                <li>
+                    <input type="radio" name="colour" value="green" id="green">
+                    <label for="green">Green</label>
+                </li>
+                <li>
+                    <input type="radio" name="colour" value="yellow" id="yellow">
+                    <label for="yellow">Yellow</label>
+                </li>
+            </ul>
+        </li>
+        <br>
+        <li>
+            <label for="Java">Is Java and JavaScript the same?</label>
+            <br>
+            <input type="radio" name="java" value="yes" id="yes">
+            <label for="yes">Yes</label>
+            <input type="radio" name="java" value="no" id="no">
+            <label for="no">No</label>
+        </li>
+        <br>
+        <li>
+            <label for="Krissi">Is Krissi a good Lecturer? Explain:</label>
+            <br>
+            <input type="text" name="krissi" id="krissi">
+        </li>
+        <br>
+        <li>
+            <label for="JavaScript">What do you like about JavaScript?</label>
+            <ul>
+                <li>
+                    <input type="checkbox" name="like" value="everything" id="everything">
+                    <label for="everything">Everything</label>
+                </li>
+                <li>
+                    <input type="checkbox" name="like" value="nothing" id="nothing">
+                    <label for="nothing">Nothing</label>
+                </li>
+                <li>
+                    <input type="checkbox" name="like" value="yes" id="yes">
+                    <label for="yes">Yes</label>
+                </li>
+                <li>
+                    <input type="checkbox" name="like" value="krissi" id="krissi">
+                    <label for="krissi">Krissi</label>
+                </li>
+            </ul>
+        </li>
+        </ul>
+        <br>
+        <button type="submit" id="submit-btn">Check Answers</button>
+    </form>
+    <div id="results"></div>
+    
+    <script src="Script.js"></script>
+    
+</body>
+</html>
