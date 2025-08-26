@@ -1,0 +1,61 @@
+
+body
+{
+    background-color: rgb(22, 9, 141);
+}
+
+main 
+{
+    display: flex;
+    gap: 15em;
+    
+    justify-content: center;
+}
+
+h1
+{
+    text-align: center;
+    color:#FFCC00
+}
+
+h2
+{
+    text-transform: capitalize;
+}
+
+.list
+{
+    padding: 1;
+}
+
+img
+{
+    max-width: 200px;
+}
+
+.btn
+{
+    border: 1px solid grey;
+    box-shadow: 5px 5px 5px #999;
+    padding: 1em;
+    margin: 1em;
+    max-width: 120px;
+    list-style:none;
+    background-color: #FFCC00;
+    cursor: pointer;
+}
+
+.btn:hover
+{
+    background-color: gold;
+}
+
+.panel
+{
+    border: 1px solid grey;
+    box-shadow: 5px 5px 5px #999;
+    padding: 1em;
+    margin-top: 2em;
+    align-self: flex-start;
+    background-color: #0075BE;
+}
