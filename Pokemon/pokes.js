@@ -27,7 +27,7 @@ async function getMyPokemon(e)
     const res = await fetch(e.target.url);  // The target is the list item with the click event in the loopPokes function
     const pokeData = await res.json();
     const panel = document.querySelector(".panel");
-    panel.innerHTML = `<h2>${pokeData.name}<h2>
+    panel.innerHTML = `<h2>${pokeData.name}</h2>
         <img src="${pokeData.sprites.other["official-artwork"].front_default}" alt="${pokeData.name}">
         <h3>Abilities:</h3>`
     const abilities = document.createElement("ul");
