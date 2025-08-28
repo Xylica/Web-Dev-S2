@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Template 1</title>
+</head>
+<body>
+    <div class="card" id="book-card">
+        <!-- Do not hardcode the content here, use JavaScript -->
+    </div>
+
+    <script>
+        const book = {
+            "id": 42,
+            "title": "The Hitchhiker's Guide to the Galaxy",
+            "author": "Douglas Adams",
+            "year": 1979,
+            "genres": ["Science Fiction", "Comedy", "Adventure"],
+            "pages": 224,
+            "language": "English",
+            "imageUrl": "https://images-na.ssl-images-amazon.com/images/I/81XSN3hA5gL.jpg"
+        }
+
+        // Your JavaScript here - populate the card with book data
+        const card = document.querySelector("#book-card");
+        card.innerHTML = `<h2>Book ${book.id}: ${book.title} (${book.year})</h2>
+        <p><strong>Author:</strong> ${book.author}</p>
+        <p><strong>Genres:</strong> ${book.genres.join(", ")}</P>
+        <img src="${book.imageUrl}" alt="${book.title}">
+        <p><strong>Language:</strong> ${book.language}<br>
+        <strong>Pages:</strong> ${book.pages}</P>`
+        
+    </script>
+
+    <style>
+        body
+        {
+            display: flex;
+            flex-direction: column;
+
+        }
+
+        .card
+        {
+            background-color: rgb(218, 208, 208);
+            color: #333;
+            padding-left: 20px;
+            padding-right: 20px;
+            max-width: 260px;
+            border: 8px solid rgb(57, 28, 100);
+            font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        }
+
+        .card img
+        {
+            width: 260px;
+            box-shadow: 5px 5px 5px #999;;
+        }
+
+        .card h2
+        {
+            text-transform: uppercase;
+            font-size: 30px;
+        }
+
+        .card p
+        {
+            font-size: 20px;
+        }
+
+        .card strong
+        {
+            font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            font-size: 23px;
+        }
+    </style>
+</body>
+</html>
