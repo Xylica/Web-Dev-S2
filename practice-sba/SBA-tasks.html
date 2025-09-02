@@ -63,7 +63,7 @@
         card.querySelector('img').src = dog.image;
         card.querySelector('h3:nth-of-type(1) + p').textContent = dog.origin;
         card.querySelector('h3:nth-of-type(2) + p').textContent = dog.size;
-        card.querySelector('h3:nth-of-type(3) + p').textContent = dog.temperament(t => `<li>${t}</li>`).join('');
+        card.querySelector('h3:nth-of-type(3) + ul').textContent = dog.temperament.map(t => `<li>${t}</li>`).join('');
 
     </script>
 
@@ -186,17 +186,45 @@
 -->
     <aside>
         <!-- Your select element will go here -->
+         <label for = "sizeFilter"> Filter by size </label>
+         <select id = "sizeFilter"> 
+            <option value = "All">All</option>
+            <option value = "Large">Large</option>
+            <option value = "Medium">Medium</option>
+            <option value = "Small">Small</option>
+         </select>
 
     </aside>
 
     <script>
         // Your JavaScript here
-
+        document.getElementById("sizeFilter").addEventListener('change', (e) => 
+        {
+            const selectedSize = e.target.value;
+            if (selectedSize === "All")
+            {
+                renderDogs(allDogs);
+            }
+            else
+            {
+                const filtered = allDogs.filter(dog => dog.size.includes(selectedSize))
+                renderDogs(filtered);
+            }
+        })
     </script>
 
     <style>
         /* Write your styles here */
+        body
+        {
+            display: flex;
+            flex-direction: column-reverse;
+        }
 
+        img
+        {
+            
+        }
     </style>
 </body>
 
