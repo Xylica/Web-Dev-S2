@@ -110,17 +110,62 @@
 
     5. Make a commit after you have completed this task
 -->
-    <div class="cards">
+    <div class="cards" id="card-container">
         <!-- Your cards will be here -->
     </div>
 
     <script>
         // Write your JavaScript here
+        let allDogs = []; // Store all the dogs globally
+        async function getDogs() 
+        {
+            const response = await fetch("https://web1-z04e.onrender.com/dogs") ;
+            allDogs = await response.json();
+            renderDogs(allDogs); // By default going to render all of the dogs
+        }
+
+        function renderDogs(dogs) 
+        {
+            const container = document.getElementById('card-container');
+            container.innerHTML = "";   // CLearing cards
+
+            dogs.forEach(dog => {
+                // temperament list
+                let temper = "";
+                for (const temp of dog.temperament)
+                {
+                    temper += `<li>${temp}</li>`
+                }
+
+                const card = document.createElement('div');
+                card.classList.add("card");
+                card.innerHTML = `<h2>${dog.breed}</h2>
+                <img src = "${dog.image}" alt = "${dog.breed}">
+                <div class = "info"> 
+                    <h3>Origin</h3>
+                    <p>${dog.origin}</p>
+                    <h3>Size</h3>
+                    <p>${dog.size}</p>
+                    <h3>Temperament</h3>
+                    <ul>${temper}</ul>
+                </div>`;
+
+                container.appendChild(card);
+            });
+        } 
+
+        getDogs();
 
     </script>
 
     <style>
         /* Write your styles here, without changing the card styles you already wrote above (they will still apply - use the cascade) */
+        .cards
+        {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+        }
 
     </style>
 
