@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SBA practice</title>
+</head>
+
+<body>
+
+<!-- TASK 1 (6 points) --------------------------------------------------------------------------------
+    Below you will find some data about a dog, including an image URL.
+    There is some HTML for a card that displays the dog data, but someone has hard coded it.
+    
+    1. Write JavaScript in the script tags below to display the dog data in the card instead - you can
+    edit the HTML as much as you need to, but try to leave it as tidy and maintainable as possible.
+    
+    2. Write CSS to style the card to look like the reference image. Hints:
+        The text colour is #333
+        The h2 is 1.5 times as big as the base font size
+        The h3s are 1.2 times as big as the base font size
+        Use CSS to make all the headings uppercase
+        Use flexbox to lay out the card
+
+    3. Make a commit after you have completed this task.
+
+-->
+    <div class="card" id="single-card">
+        <!-- You can change the HTML in here if you need to -->
+        <h2>German Longhaired Pointer</h2>
+        <img src="https://images.dog.ceo/breeds/pointer-germanlonghair/hans2.jpg" alt="dog">
+        <div class="info">
+            <h3>ORIGIN</h3>
+            <p>Germany</p>
+            <h3>SIZE</h3>
+            <p>Large</p>
+            <h3>TEMPERAMENT</h3>
+            <ul>
+                <li>Affectionate</li>
+                <li>Energetic</li>
+                <li>Intelligent</li>
+            </ul>
+        </div>
+    </div>
+
+    <script>
+        const dog = {
+            "id": 23,
+            "breed": "German Longhaired Pointer",
+            "origin": "Germany",
+            "size": "Large",
+            "temperament": ["Affectionate", "Energetic", "Intelligent"],
+            "colors": ["Liver", "Liver and White"],
+            "coatType": "Double coat",
+            "coatLength": "Medium",
+            "image": "https://images.dog.ceo/breeds/pointer-germanlonghair/hans2.jpg"
+        }
+
+        // Your JavaScript here
+        const card = document.getElementById('single-card');
+        card.querySelector('h2').textContent = dog.breed;
+        card.querySelector('img').src = dog.image;
+        card.querySelector('h3:nth-of-type(1) + p').textContent = dog.origin;
+        card.querySelector('h3:nth-of-type(2) + p').textContent = dog.size;
+        card.querySelector('h3:nth-of-type(3) + p').textContent = dog.temperament(t => `<li>${t}</li>`).join('');
+
+    </script>
+
+    <style>
+        /* Write your styles here (I'm giving you some for free too) */
+        .card {
+            display: flex;
+            flex-direction: column;
+            width: 300px;
+            border: 1px solid #333;
+            padding: 10px;
+            color: #333;
+        }
+
+        h3,h2
+        {
+            text-transform: uppercase
+        }
+
+        h2
+        {
+            font-size: 1.5rem;
+        }
+
+        h3
+        {
+            font-size: 1.2rem;
+        }
+
+    </style>
+
+
+<!-- TASK 2 (6 points) ---------------------------------------------------------------------------------------
+    Now we want a whole lot of dogs at once!
+
+    1. You need to fetch the dog data from the API at https://web1-z04e.onrender.com/dogs
+
+    2. Loop through the data and generate a card for each dog
+
+    3. Use the same card design as above, making sure all the cards are the same size and shape
+        Try to do this without hard coding the height 
+
+    4. Place the cards in three columns, with as many rows as needed
+
+    5. Make a commit after you have completed this task
+-->
+    <div class="cards">
+        <!-- Your cards will be here -->
+    </div>
+
+    <script>
+        // Write your JavaScript here
+
+    </script>
+
+    <style>
+        /* Write your styles here, without changing the card styles you already wrote above (they will still apply - use the cascade) */
+
+    </style>
+
+
+<!-- TASK 3 (3 points) ---------------------------------------------------------------------------------------
+    Now we want to be able to filter the dogs by size.
+
+    1. Add a select element in the aside element below, with options for all the different sizes of dogs
+
+    2. When a user selects a size, only the dogs of that size should be displayed
+
+    3. If the user selects "All", all the dogs should be displayed
+
+    4. The cards should be laid out in the same way as above, but use CSS to place the aside
+        element at the top of the page (don't move the HTML)
+
+    5. Make a commit after you have completed this task
+-->
+    <aside>
+        <!-- Your select element will go here -->
+
+    </aside>
+
+    <script>
+        // Your JavaScript here
+
+    </script>
+
+    <style>
+        /* Write your styles here */
+
+    </style>
+</body>
+
+</html>
